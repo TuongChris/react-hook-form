@@ -1,4 +1,4 @@
-import ListPage from "./auth/Pages/index";
+import ListPage from "./modules/auth/Pages/LoginPage";
 
 function App() {
   return (

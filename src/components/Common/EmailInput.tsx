@@ -1,3 +1,4 @@
+import TextField from "@mui/material/TextField";
 import {
   Control,
   Controller,
@@ -5,7 +6,6 @@ import {
   Path,
   PathValue,
 } from "react-hook-form";
-import TextField from "@mui/material/TextField";
 
 interface InputFieldProps<T extends FieldValues> {
   control: Control<T>;
@@ -34,6 +34,12 @@ const InputField = <T extends FieldValues>({
             disabled={disabled}
             error={!!fieldState.error}
             helperText={fieldState.error?.message}
+            InputLabelProps={{ className: "dark:text-white" }}
+            InputProps={{
+              classes: {
+                notchedOutline: "dark:border-white !important",
+              },
+            }}
           />
         )}
       />

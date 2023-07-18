@@ -25,7 +25,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
   };
 
   return (
-    <div className="mb-8">
+    <div className="mb-5">
       <Controller
         name={name}
         control={control as Control<FieldValues>}
@@ -39,10 +39,18 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
             error={!!fieldState.error}
             helperText={fieldState.error?.message}
             type={showPassword ? "text" : "password"}
+            InputLabelProps={{ className: "dark:text-white" }}
             InputProps={{
+              classes: {
+                notchedOutline: "dark:border-white",
+              },
               endAdornment: (
                 <IconButton onClick={handleTogglePassword}>
-                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  {showPassword ? (
+                    <VisibilityIcon className="dark:text-white" />
+                  ) : (
+                    <VisibilityOffIcon className="dark:text-white" />
+                  )}
                 </IconButton>
               ),
             }}
